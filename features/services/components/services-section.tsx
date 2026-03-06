@@ -6,7 +6,7 @@ export function ServicesSection() {
   return (
     <>
       <div className="w-full" aria-hidden />
-      <section id="services" className="bg-[#f9f9f9] px-5 py-16 md:py-24 dark:bg-[#090a0d]">
+      <section id="services" className="bg-[#f9f9f9] px-0 py-16 md:px-5 md:py-24 dark:bg-[#090a0d]">
         <div className="mb-4 flex justify-center">
           <SectionChip>Engineering services</SectionChip>
         </div>

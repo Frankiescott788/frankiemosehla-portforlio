@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function HeroWithCursor() {
   return (
-    <section className="hero-pattern relative mt-4">
+    <section className="hero-pattern relative mt-4 ">
       <div
         className="absolute bottom-8 right-8 z-20 md:bottom-12 md:right-12"
         aria-hidden
@@ -44,7 +44,7 @@ export function HeroWithCursor() {
         </div>
       </section>
 
-      <section className="px-8 pb-16 text-center md:px-12">
+      <section className="px-0 pb-16 text-center md:px-8 md:pb-16 lg:px-12">
         <h1 className="mx-auto max-w-2xl font-sans text-3xl font-bold tracking-tight text-[#090a0d] dark:text-white md:text-4xl lg:text-[60px]">
           The guy who ships. Software & AI Engineer.
         </h1>

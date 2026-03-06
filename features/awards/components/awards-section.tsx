@@ -13,7 +13,7 @@ export function AwardsSection() {
   return (
     <>
       <div className="w-full" aria-hidden />
-      <section id="awards" className="px-5 py-16 md:py-24">
+      <section id="awards" className="px-0 py-16 md:py-24 md:px-5">
         <div className="mb-4 flex justify-center">
           <SectionChip>Hackathons</SectionChip>
         </div>

@@ -22,8 +22,8 @@ export default function Page() {
           className="pointer-events-none absolute left-0 right-0 top-0 z-10 border-t border-dashed border-[#d6d8da] dark:border-[#272c37]"
           aria-hidden
         />
-        {/* Outer: full width, 32px horizontal padding (Framer "Header" wrapper) */}
-        <div className="flex flex-col items-center px-8 ">
+        {/* Outer: full width, 12px horizontal padding on mobile, 32px from md up */}
+        <div className="flex flex-col items-center px-3 md:px-8 ">
           {/* Inner: content column – vertical dashed borders from top of page */}
           <div className="-mt-[7rem] flex w-full max-w-[1280px] flex-col border-x border-dashed border-[#d6d8da] pt-24 dark:border-[#272c37] ">
             {/* Hero section: dotted pattern only here */}

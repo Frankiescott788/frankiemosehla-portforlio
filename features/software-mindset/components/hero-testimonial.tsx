@@ -3,7 +3,7 @@ import { SectionChip } from "@/shared/components/section-chip";
 
 export function HeroTestimonial() {
   return (
-    <section className="px-8 py-16 text-center md:px-12 md:py-24">
+    <section className="px-0 py-16 text-center md:px-8 md:py-24 lg:px-12">
       <div className="mb-6 flex justify-center">
         <SectionChip>Software mindset</SectionChip>
       </div>

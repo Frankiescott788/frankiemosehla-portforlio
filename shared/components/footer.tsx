@@ -10,7 +10,7 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-dashed border-[#d6d8da] px-5 py-6 dark:border-[#272c37]">
+    <footer className="border-t border-dashed border-[#d6d8da] px-3 py-6 dark:border-[#272c37] md:px-5">
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 font-sans text-xs text-[#545961] sm:flex-row dark:text-[#a6a9ae]">
         <p className="flex items-center gap-2">
           <span

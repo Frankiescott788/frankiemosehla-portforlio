@@ -39,7 +39,7 @@ export function WorkProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="py-16 md:py-24 px-5">
+    <section id="process" className="py-16 md:py-24 px-0 md:px-5">
       <div>
         <div className="mb-4 flex justify-center">
           <SectionChip>Work process</SectionChip>

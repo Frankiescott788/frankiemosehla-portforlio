@@ -12,7 +12,7 @@ export function ExperienceSection() {
   return (
     <>
       <div className="w-full" aria-hidden />
-      <section id="experience" className="px-5 py-16 md:py-24">
+      <section id="experience" className="px-0 py-16 md:px-5 md:py-24">
         <div className="mb-4 flex justify-center">
           <SectionChip>Résumé</SectionChip>
         </div>

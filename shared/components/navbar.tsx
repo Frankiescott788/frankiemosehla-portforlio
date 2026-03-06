@@ -71,7 +71,21 @@ export function Navbar({ className }: { className?: string }) {
       )}
     >
       <div className="flex w-full items-center justify-between gap-2 md:hidden">
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            aria-label="Home"
+            className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-[12px]"
+          >
+            <Image
+              src="/icons/logo.svg"
+              alt=""
+              width={32}
+              height={32}
+              className="h-8 w-8 object-contain"
+            />
+          </Link>
+        </div>
         <div className="flex items-center gap-2">
           <Link
             href={site.github}
@@ -91,10 +105,18 @@ export function Navbar({ className }: { className?: string }) {
           </Link>
           <Link
             href="#book"
-            className="flex h-10 cursor-pointer items-center justify-center gap-3 rounded-xl border border-dashed border-[#d6d8da] bg-white py-1 pl-[18px] pr-2.5 font-sans text-xs text-[#545961] no-underline shadow-[0_6px_8px_-6px_rgba(16,24,40,0.16)] hover:text-[#090a0d] dark:border-[#272c37] dark:bg-[#181c24] dark:text-[#a6a9ae] dark:hover:text-white"
+            className="flex h-10 cursor-pointer items-center justify-center gap-2 rounded-xl border-0 bg-[#090a0d] py-1 pl-[18px] pr-2.5 font-sans text-xs font-medium text-white no-underline shadow-[0_6px_8px_-6px_rgba(16,24,40,0.16)] hover:bg-[#272c37] dark:bg-white dark:text-[#090a0d] dark:hover:bg-[#eaeaeb]"
           >
-            Let&apos;s talk
-            <span className="h-6 w-6 shrink-0 rounded-full border border-[#d6d8da] bg-[#f4f4f4] dark:border-[#272c37] dark:bg-[#272c37]" />
+            Let's Talk
+            <span className="relative block h-6 w-6 shrink-0 overflow-hidden rounded-[6px] border border-white/30 dark:border-[#272c37]">
+              <Image
+                src="/images/frankie.png"
+                alt=""
+                fill
+                className="object-cover object-center"
+                sizes="24px"
+              />
+            </span>
           </Link>
         </div>
       </div>
