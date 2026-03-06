@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import { site } from "@/lib/site";
+
 const links = [
-  { label: "GitHub", href: "https://github.com/Frankiescott788" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/frankiemosehla" },
-  { label: "Instagram", href: "https://www.instagram.com/frankie.intech/" },
+  { label: "GitHub", href: site.github },
+  { label: "LinkedIn", href: site.linkedin },
+  { label: "Instagram", href: site.instagram },
 ];
 
 export function Footer() {

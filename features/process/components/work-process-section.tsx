@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionChip } from "@/shared/components/section-chip";
 import { useCallback, useRef, useState } from "react";
+import { site } from "@/lib/site";
 import { steps } from "@/features/process/constants/steps";
 import { STACK_ROW_1, STACK_ROW_2 } from "@/features/process/constants/stack";
 import { StackCard } from "@/features/process/components/stack-card";
@@ -116,7 +117,7 @@ export function WorkProcessSection() {
           Book a call
         </Link>
         <Link
-          href="https://github.com"
+          href={site.github}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-10 w-[140px] shrink-0 items-center justify-center gap-2 rounded-[12px] border border-dashed border-[#d6d8da] bg-white px-5 py-1 font-sans text-xs text-[#090a0d] shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1)] dark:border-[#272c37] dark:bg-[#181c24] dark:text-white"

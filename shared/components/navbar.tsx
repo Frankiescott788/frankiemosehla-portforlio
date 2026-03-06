@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useCallback, useSyncExternalStore } from "react";
 import { Button } from "@/shared/components/ui/button";
 import { cn } from "@/lib/utils";
+import { site } from "@/lib/site";
 
 const navLinks = [
   { href: "#process", label: "Process" },
@@ -73,7 +74,7 @@ export function Navbar({ className }: { className?: string }) {
         <ThemeToggle />
         <div className="flex items-center gap-2">
           <Link
-            href="https://github.com"
+            href={site.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -145,7 +146,7 @@ export function Navbar({ className }: { className?: string }) {
 
       <div className="hidden items-center justify-end gap-2 md:flex">
         <Link
-          href="https://github.com"
+          href={site.github}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"

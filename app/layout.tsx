@@ -88,9 +88,7 @@ const personJsonLd = {
   jobTitle: "Software Engineer",
   description: site.description,
   image: `${site.url}/images/frankie.png`,
-  sameAs: [
-    // Add when you have them: "https://github.com/frankiemosehla", "https://linkedin.com/in/..."
-  ].filter(Boolean),
+  sameAs: [site.github, site.linkedin, site.instagram].filter(Boolean),
 };
 
 export default function RootLayout({

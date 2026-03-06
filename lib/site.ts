@@ -17,4 +17,7 @@ export const site = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "frankiemosehla@gmail.com",
   locale: "en_ZA",
   twitterHandle: "", // optional: e.g. "@frankiemosehla"
+  github: "https://github.com/Frankiescott788",
+  linkedin: "https://www.linkedin.com/in/frankiemosehla",
+  instagram: "https://www.instagram.com/frankie.intech/",
 } as const;
