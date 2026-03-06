@@ -21,7 +21,14 @@ export function HeroTestimonial() {
           />
         </div>
         <cite className="not-italic font-sans text-base font-medium text-[#090a0d] dark:text-white">
-          Larry Tesler
+          <a
+            href="https://en.wikipedia.org/wiki/Larry_Tesler"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 hover:underline"
+          >
+            Larry Tesler
+          </a>
         </cite>
         <p className="font-sans text-sm text-[#545961] dark:text-[#a6a9ae]">
         Cut/copy/paste, modeless computing, Apple chief scientist
