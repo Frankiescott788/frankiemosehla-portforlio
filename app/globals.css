@@ -141,8 +141,20 @@
   html,
   body,
   body * {
-    cursor: url("/icons/cursor.svg") 10 8, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='48' viewBox='-4 -4 18 20'%3E%3Cg transform='rotate(12 4.5 6)'%3E%3Cpath fill='black' fill-rule='evenodd' d='M0 0v11.188L2.969 8.322 3.129 8.183H8.165L0 0Z'/%3E%3C/g%3E%3C/svg%3E") 10 8, auto;
+    cursor: url("/images/Cursor.svg") 16 8, auto;
   }
+}
+
+/* Dense dotted grid – hero section only (outside @layer so it wins over utilities) */
+.hero-pattern {
+  background-color: rgb(255, 255, 255) !important;
+  background-image: radial-gradient(circle at center, #d6d8da 1px, transparent 1px) !important;
+  background-size: 8px 8px !important;
+}
+.dark .hero-pattern {
+  background-color: var(--background) !important;
+  background-image: radial-gradient(circle at center, rgb(75 85 99 / 0.5) 1px, transparent 1px) !important;
+  background-size: 8px 8px !important;
 }
 
 /* Pointer cursor for interactive elements - after base layer so it wins over body * */
@@ -160,6 +172,13 @@ label[for],
 [class*="cursor-pointer"],
 [class*="cursor-pointer"] * {
   cursor: url("/icons/pointinghand.svg") 16 8, pointer !important;
+}
+
+/* Text / I-beam cursor for inputs and selectable text – same hotspot style as pointer */
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: url("/images/ibeam.svg") 4 8, text !important;
 }
 
 /* Marquee scrolling to the right (strip moves right, infinite loop) */

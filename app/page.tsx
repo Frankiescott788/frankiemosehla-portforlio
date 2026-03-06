@@ -1,16 +1,16 @@
-import { Navbar } from "@/components/navbar";
-import { SectionDivider } from "@/components/section-divider";
-import { HeroWithCursor } from "@/components/hero-with-cursor";
-import { HeroTestimonial } from "@/components/hero-testimonial";
-import { TestimonialSection } from "@/components/testimonial-section";
-import { WorkProcessSection } from "@/components/work-process-section";
-import { ServicesSection } from "@/components/services-section";
-import { ProjectsSection } from "@/components/projects-section";
-import { QualitiesSection } from "@/components/qualities-section";
-import { ExperienceSection } from "@/components/experience-section";
-import { AwardsSection } from "@/components/awards-section";
-import { GetStartedSection } from "@/components/get-started-section";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/shared/components/navbar";
+import { SectionDivider } from "@/shared/components/section-divider";
+import { Footer } from "@/shared/components/footer";
+import { HeroWithCursor } from "@/features/hero/components/hero-with-cursor";
+import { HeroTestimonial } from "@/features/software-mindset/components/hero-testimonial";
+import { TestimonialSection } from "@/features/testimonials/components/testimonial-section";
+import { WorkProcessSection } from "@/features/process/components/work-process-section";
+import { ServicesSection } from "@/features/services/components/services-section";
+import { ProjectsSection } from "@/features/projects/components/projects-section";
+import { QualitiesSection } from "@/features/qualities/components/qualities-section";
+import { ExperienceSection } from "@/features/experience/components/experience-section";
+import { AwardsSection } from "@/features/awards/components/awards-section";
+import { GetStartedSection } from "@/features/get-started/components/get-started-section";
 
 export default function Page() {
   return (

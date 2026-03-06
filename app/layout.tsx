@@ -69,10 +69,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: site.url,
   },
+  icons: {
+    icon: "/icons/logo.svg",
+    shortcut: "/icons/logo.svg",
+    apple: "/icons/logo.svg",
+  },
 };
 
-const CURSOR_SVG =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='24' viewBox='-4 -4 18 20'%3E%3Cg transform='rotate(12 4.5 6)'%3E%3Cpath fill='black' fill-rule='evenodd' d='M0 0v11.188L2.969 8.322 3.129 8.183H8.165L0 0Z'/%3E%3C/g%3E%3C/svg%3E";
+const CURSOR_SVG = "/images/Cursor.svg";
+const CURSOR_HOTSPOT = "16 8";
 
 const personJsonLd = {
   "@context": "https://schema.org",
@@ -94,10 +99,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} style={{ cursor: `url(${CURSOR_SVG}) 5 4, auto` }}>
+    <html lang="en" className={inter.variable} style={{ cursor: `url(${CURSOR_SVG}) ${CURSOR_HOTSPOT}, auto` }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ cursor: `url(${CURSOR_SVG}) 5 4, auto` }}
+        style={{ cursor: `url(${CURSOR_SVG}) ${CURSOR_HOTSPOT}, auto` }}
       >
         <script
           type="application/ld+json"
