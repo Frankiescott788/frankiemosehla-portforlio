@@ -1,6 +1,7 @@
 import { Navbar } from "@/shared/components/navbar";
 import { SectionDivider } from "@/shared/components/section-divider";
 import { Footer } from "@/shared/components/footer";
+import { DecorativeSignature } from "@/shared/components/decorative-signature";
 import { HeroWithCursor } from "@/features/hero/components/hero-with-cursor";
 import { HeroTestimonial } from "@/features/software-mindset/components/hero-testimonial";
 import { TestimonialSection } from "@/features/testimonials/components/testimonial-section";
@@ -68,6 +69,8 @@ export default function Page() {
             <SectionDivider />
 
             <Footer />
+            <SectionDivider />
+            <DecorativeSignature />
           </div>
         </div>
       </main>
