@@ -36,7 +36,7 @@ export function GetStartedSection() {
   }, []);
 
   return (
-    <section id="book" className="body-pattern py-16 md:py-24">
+    <section id="book" className="py-16 md:py-24">
       <div className="mx-auto flex max-w-[920px] flex-col items-center text-center">
         <div className="flex items-center justify-center gap-2">
           <span className="flex h-10 w-10 items-center justify-center rounded-[14px] bg-[#090a0d] shadow-[0_6px_12px_-8px_rgba(16,24,40,0.35)] dark:bg-white">

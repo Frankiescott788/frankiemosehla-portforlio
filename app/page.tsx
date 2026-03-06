@@ -10,6 +10,7 @@ import { QualitiesSection } from "@/components/qualities-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { AwardsSection } from "@/components/awards-section";
 import { GetStartedSection } from "@/components/get-started-section";
+import { Footer } from "@/components/footer";
 
 export default function Page() {
   return (
@@ -27,6 +28,8 @@ export default function Page() {
           <div className="-mt-[7rem] flex w-full max-w-[1280px] flex-col border-x border-dashed border-[#d6d8da] pt-24 dark:border-[#272c37] ">
             {/* Hero section: dotted pattern only here */}
             <HeroWithCursor />
+
+            <SectionDivider />
 
             <HeroTestimonial />
 
@@ -62,6 +65,9 @@ export default function Page() {
 
             <GetStartedSection />
 
+            <SectionDivider />
+
+            <Footer />
           </div>
         </div>
       </main>

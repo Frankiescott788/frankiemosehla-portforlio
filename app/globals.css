@@ -143,17 +143,6 @@
   body * {
     cursor: url("/icons/cursor.svg") 10 8, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='48' viewBox='-4 -4 18 20'%3E%3Cg transform='rotate(12 4.5 6)'%3E%3Cpath fill='black' fill-rule='evenodd' d='M0 0v11.188L2.969 8.322 3.129 8.183H8.165L0 0Z'/%3E%3C/g%3E%3C/svg%3E") 10 8, auto;
   }
-  /* Dense dotted grid – dots close together */
-  .body-pattern {
-    background-color: rgb(255, 255, 255);
-    background-image: radial-gradient(circle at center, #d6d8da 1px, transparent 1px);
-    background-size: 8px 8px;
-  }
-  .dark .body-pattern {
-    background-color: var(--background);
-    background-image: radial-gradient(circle at center, rgb(55 65 81 / 0.4) 1px, transparent 1px);
-    background-size: 8px 8px;
-  }
 }
 
 /* Pointer cursor for interactive elements - after base layer so it wins over body * */

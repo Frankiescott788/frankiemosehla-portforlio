@@ -57,7 +57,7 @@ export function QualitiesSection() {
   return (
     <>
       <div className="w-full" aria-hidden />
-      <section id="qualities" className="body-pattern px-5 py-16 md:py-24">
+      <section id="qualities" className="px-5 py-16 md:py-24">
         <div className="mb-4 flex justify-center">
           <SectionChip>Key values</SectionChip>
         </div>
