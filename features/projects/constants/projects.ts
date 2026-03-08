@@ -8,6 +8,14 @@ const projects: Array<
   } & { caseStudySlug?: string }
 > = [
   {
+    title: "LuminaLab",
+    description: "An AI-powered startup idea validation platform featuring dual debate agents.",
+    tags: ["AI", "SaaS", "Full-stack", "Next.js", "Supabase"],
+    imageSrc: "/content/lumina-labs-home.svg",
+    imageAlt: "LuminaLab",
+    caseStudySlug: "luminalab",
+  },
+  {
     title: "KBY Fitness",
     description: "Women-only fitness mobile app design — onboarding, progress tracking, workouts, goals, and in-app store.",
     tags: ["UI/UX", "Mobile", "Client work", "Figma"],
@@ -22,14 +30,6 @@ const projects: Array<
     imageSrc: "/images/case-studies/timesheet.png",
     imageAlt: "CodeTribe Timesheet",
     caseStudySlug: "codetribe-timesheet",
-  },
-  {
-    title: "LuminaLab",
-    description: "An AI-powered startup idea validation platform featuring dual debate agents.",
-    tags: ["AI", "SaaS", "Full-stack", "Next.js", "Supabase"],
-    imageSrc: "/content/lumina-labs-home.svg",
-    imageAlt: "LuminaLab",
-    caseStudySlug: "luminalab",
   },
   {
     title: "Zeroes and Ones",
