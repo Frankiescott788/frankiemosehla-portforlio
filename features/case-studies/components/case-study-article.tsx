@@ -4,6 +4,7 @@ import { Navbar } from "@/shared/components/navbar";
 import { Badge } from "@/shared/components/ui/badge";
 import { CaseStudyMarkdown } from "@/features/case-studies/components/case-study-markdown";
 import type { CaseStudyMeta } from "@/lib/case-studies";
+import { ChevronLeft } from "lucide-react";
 
 type CaseStudyArticleProps = {
   meta: CaseStudyMeta;
@@ -25,7 +26,8 @@ export function CaseStudyArticle({ meta, content }: CaseStudyArticleProps) {
               href="/#projects"
               className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
             >
-              ← Case studies
+              <ChevronLeft className="size-4 shrink-0" />
+              Case studies
             </Link>
 
             {meta.coverImage && (
