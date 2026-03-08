@@ -73,11 +73,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: site.url,
   },
-  icons: {
-    icon: "/icons/logo.svg",
-    shortcut: "/icons/logo.svg",
-    apple: "/icons/logo.svg",
-  },
   formatDetection: {
     email: false,
     address: false,
