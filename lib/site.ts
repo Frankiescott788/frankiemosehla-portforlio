@@ -1,11 +1,11 @@
 /**
  * Site-wide config for SEO and metadata.
- * Set NEXT_PUBLIC_SITE_URL to your production URL (e.g. https://frankiemosehla.com).
- * When unset, defaults to Vercel deployment URL so OG and canonical work there too.
+ * Set NEXT_PUBLIC_SITE_URL to override (e.g. for preview deployments).
+ * Production: https://frankiemosehla.dev
  */
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-  "https://frankiemosehla.vercel.app";
+  "https://frankiemosehla.dev";
 
 export const site = {
   name: "Nkululeko Frank Mosehla",

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
+  applicationName: site.shortName,
   keywords: [
     "Frank Mosehla",
     "Nkululeko Mosehla",
@@ -34,9 +35,11 @@ export const metadata: Metadata = {
     "mobile development",
     "product engineering",
     "South Africa",
+    "frankiemosehla.dev",
   ],
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
+  publisher: site.name,
   openGraph: {
     type: "website",
     locale: site.locale,
@@ -75,6 +78,11 @@ export const metadata: Metadata = {
     shortcut: "/icons/logo.svg",
     apple: "/icons/logo.svg",
   },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 const CURSOR_SVG = "/images/Cursor.svg";
@@ -92,6 +100,16 @@ const personJsonLd = {
   sameAs: [site.github, site.linkedin, site.instagram].filter(Boolean),
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.shortName,
+  url: site.url,
+  description: site.description,
+  author: { "@type": "Person" as const, name: site.name },
+  inLanguage: site.locale,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -106,6 +124,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {children}
         <Analytics />

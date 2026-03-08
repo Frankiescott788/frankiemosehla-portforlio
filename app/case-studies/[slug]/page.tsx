@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [{ url: image, alt: meta.title }],
     },
     twitter: { card: "summary_large_image", title, description },
+    alternates: {
+      canonical: `${site.url}/case-studies/${slug}`,
+    },
   };
 }
 
