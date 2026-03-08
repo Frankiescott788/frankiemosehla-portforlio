@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionChip } from "@/shared/components/section-chip";
 import { projects } from "@/features/projects/constants/projects";
+import { site } from "@/lib/site";
 
 const cardClass =
   "flex min-w-0 flex-col overflow-hidden rounded-2xl border border-dashed border-[#d6d8da] bg-white font-sans shadow-[0_5px_8px_-4px_rgba(16,24,40,0.12)] dark:border-[#272c37] dark:bg-[#090a0d]";
@@ -26,7 +27,7 @@ export function ProjectsSection() {
             const slug = project.caseStudySlug;
             const content = (
               <>
-                <div className="relative flex h-[350px] w-full items-center justify-center overflow-hidden border-b border-[#eaeaeb] bg-[#f9f9f9] px-6 py-8 dark:border-[#272c37] dark:bg-[#181c24]">
+                <div className="relative flex cursor-pointer h-[350px] w-full items-center justify-center overflow-hidden border-b border-[#eaeaeb] bg-[#f9f9f9] px-6 py-8 dark:border-[#272c37] dark:bg-[#181c24]">
                   <Image
                     src={project.imageSrc}
                     alt={project.imageAlt}
@@ -35,7 +36,7 @@ export function ProjectsSection() {
                     className="h-full w-full object-contain object-center"
                   />
                 </div>
-                <div className="flex flex-col gap-3 p-6">
+                <div className="flex flex-col gap-3 p-3">
                   <h3 className="font-sans text-xl font-bold text-[#090a0d] dark:text-white">
                     {project.title}
                   </h3>
@@ -76,7 +77,9 @@ export function ProjectsSection() {
 
         <div className="mt-12 flex justify-center">
           <Link
-            href="#projects"
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex h-10 min-w-[140px] items-center justify-center gap-2 rounded-[12px]  bg-[#090a0d] px-5 py-1 font-sans text-xs text-white shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1)] dark:border-[#272c37]"
           >
             View more projects

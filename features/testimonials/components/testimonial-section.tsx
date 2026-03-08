@@ -7,7 +7,7 @@ export function TestimonialSection() {
       <div className="w-full" aria-hidden />
       <section id="testimonials" className="hero-pattern px-0 py-16 md:px-5 md:py-24">
         <div className="mb-4 flex justify-center">
-          <SectionChip>Software mindset</SectionChip>
+          <SectionChip>Kind words</SectionChip>
         </div>
         <h2 className="mx-auto max-w-2xl text-center font-sans text-3xl font-bold tracking-tight text-[#090a0d] dark:text-white md:text-4xl">
           What people say
