@@ -177,7 +177,15 @@ label[for],
 /* Text / I-beam cursor for inputs and selectable text – same hotspot style as pointer */
 input,
 textarea,
-[contenteditable="true"] {
+[contenteditable="true"],
+.cursor-text,
+p,
+h1, h2, h3, h4, h5, h6,
+li,
+blockquote,
+figcaption,
+td,
+th {
   cursor: url("/images/ibeam.svg") 4 8, text !important;
 }
 

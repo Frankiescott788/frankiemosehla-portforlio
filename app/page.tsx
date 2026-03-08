@@ -16,7 +16,7 @@ import { GetStartedSection } from "@/features/get-started/components/get-started
 export default function Page() {
   return (
     <>
-      <Navbar />
+      <Navbar  />
       <main className="relative mt-[7rem] min-h-screen border-t border-dashed border-[#d6d8da] dark:border-[#272c37]">
         {/* Horizontal border layer – on top so it stays visible when column extends up */}
         <div

@@ -1,0 +1,108 @@
+---
+title: "LuminaLab"
+slug: "luminalab"
+summary: "An AI-powered startup idea validation platform where two debate agents argue for and against your idea in real time."
+coverImage: "/images/case-studies/luminalab.png"
+techStack: ["Next.js 15", "Supabase", "Vercel AI SDK", "Clerk", "Groq", "TypeScript"]
+tags: ["AI", "SaaS", "Full-stack"]
+liveUrl: ""
+githubUrl: ""
+status: "published"
+---
+
+Most founders validate startup ideas by asking friends or posting in communities. The feedback is biased, shallow, and hard to act on. LuminaLab is an attempt to fix that by turning idea validation into a structured debate between two AI agents — one that wants your idea to succeed and one that wants to kill it.
+
+![LuminaLab hero](/images/case-studies/luminalab-hero.png)
+
+## The idea
+
+You submit a startup idea. Two agents, **Paradox** and **Glitch**, argue it out. Paradox builds the case for why the idea could work — market timing, opportunity, strengths. Glitch tears it apart — risks, competition, blind spots. Neither agent is trying to make you feel good. The goal is a debate honest enough to be useful.
+
+When the debate ends, **Lumina** stays available in a side panel. You can ask follow-up questions about anything either agent raised — probe a specific risk, ask for a competitor comparison, or get a plain-language summary of the whole debate.
+
+## The dashboard
+
+After signing in, users land on a dashboard that surfaces their most recent debate and two community threads. It is designed to get you back into context immediately. One view and you know exactly where you left off.
+
+New users are placed on the free tier by default, which allows up to three debates. No setup, no configuration. You sign in and you are ready to go.
+
+![LuminaLab dashboard](/images/case-studies/luminalab-dashboard.png)
+
+## The debate page
+
+The debate page is split into three sections that work together.
+
+The **summary panel** sits at the top. It shows the idea being debated, a short description, and the current status of the debate so you always have context before reading the arguments.
+
+The **debate feed** is the main content area. Paradox and Glitch stream their arguments in turns, token by token, so the interface feels live. You are not waiting for a response to finish loading — you watch each agent think in real time.
+
+The **Lumina side panel** lives on the right side of the page. Once the debate completes, Lumina is ready for follow-up questions. It has full context of everything both agents said and responds like a chat interface. Ask it anything about the debate.
+
+![Debate page with Lumina side panel](/images/case-studies/luminalab-debate.png)
+
+## How the streaming works
+
+When a user submits an idea, the backend orchestrates the debate and writes agent messages to Supabase as they are generated. The client subscribes to those inserts via Supabase Realtime and renders each message as it arrives.
+```ts
+const channel = supabase
+  .channel(`debate:${debateId}`)
+  .on(
+    "postgres_changes",
+    {
+      event: "INSERT",
+      schema: "public",
+      table: "debate_messages",
+      filter: `debate_id=eq.${debateId}`,
+    },
+    (payload) => {
+      setMessages((prev) => [...prev, payload.new])
+    }
+  )
+  .subscribe()
+```
+
+The agents take turns. Getting the sequencing right — making sure Glitch does not start writing before Paradox has finished — required careful orchestration on the backend. The turn state lives in Supabase and the backend checks it before writing each new message.
+
+## Subscription tiers
+
+Subscriptions are handled through Clerk's billing system, which runs Stripe under the hood. Usage is tracked in Supabase. Every debate decrements a counter tied to the user's tier. When the free tier limit is reached, the UI blocks new debates and surfaces an upgrade prompt.
+
+Clerk owning the billing layer means subscription state is available through the same auth hooks already in use across the app. There is no separate billing context, no extra API calls.
+```ts
+const { has } = useAuth()
+const canDebate = has({ feature: "debates" })
+```
+
+## Service layer architecture
+
+The first version had everything in a single API route. AI calls, database writes, turn state management, and streaming response handling all lived in one file. It worked but adding anything new meant touching code that affected everything else.
+
+The refactor introduced a proper service layer. Each concern became its own module and the API route became a thin coordinator.
+```
+features/
+  debate/
+    services/
+      debate-orchestrator.ts
+      message-writer.ts
+      usage-tracker.ts
+    api/
+      route.ts
+```
+
+This made it straightforward to add subscription checks and usage limits without touching streaming logic. It also made debugging significantly easier — when something breaks, the problem is isolated to one module rather than buried in a 300-line route handler.
+
+## CI/CD and project management
+
+Every push to main runs through a GitHub Actions pipeline. Types are checked, lints run, and a passing build is required before anything merges to production. Branch protection enforces this without exception.
+
+The project is tracked in Linear under the KarooTech workspace, with issues, feature labels, and milestone dates. It is the same workflow used for client work — structured, traceable, and easy to pick up after time away.
+
+![Linear project board for LuminaLab](/images/case-studies/luminalab-linear.png)
+
+Shipping a side project with the same discipline as a client engagement makes a difference. The Linear board shows exactly what shipped, what is in progress, and what is next.
+
+## Status
+
+<Callout>
+  LuminaLab is actively in development. The core debate flow, dashboard, streaming, and Lumina side panel are working. Community threads are in progress. Launching soon.
+</Callout>
