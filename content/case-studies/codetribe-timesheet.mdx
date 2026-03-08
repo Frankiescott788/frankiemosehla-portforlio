@@ -1,0 +1,52 @@
+---
+title: "CodeTribe Timesheet"
+slug: "codetribe-timesheet"
+summary: "A QR-based attendance and time tracking system built for CodeTribe Academy with geo-fencing to prevent remote check-ins."
+coverImage: "/images/case-studies/timesheet.png"
+techStack: ["React Native", "Expo", "Supabase", "TypeScript"]
+tags: ["Mobile", "Production", "CodeTribe"]
+liveUrl: ""
+githubUrl: ""
+status: "published"
+---
+
+Tracking attendance at CodeTribe was manual, inconsistent, and easy to game. I built a mobile app to fix that. It has been running in production at the academy since I shipped it.
+
+![Timesheet check-in screen](/images/case-studies/timesheet-checkin.png)
+
+## The problem
+
+Every morning, facilitators were manually recording who showed up. There was nothing stopping a trainee from asking a friend to mark them present without being in the building. The academy needed something that verified physical presence, not just a tap on a screen.
+
+## How it works
+
+Trainees open the app and scan a QR code to check in. Before the scan goes through, the app calculates their distance from the academy using GPS coordinates. If they are outside the allowed radius, the check-in is blocked.
+
+The same flow runs at the end of the day for check-out. Total hours are calculated automatically and visible to facilitators on a live dashboard, updated in real time via Supabase.
+
+![Admin dashboard showing trainee hours](/images/case-studies/timesheet-dashboard.png)
+
+## Geo-fencing with the Haversine formula
+
+This was the hard part. Mobile GPS is noisier than most people expect, especially on low-end Android devices. A basic Euclidean distance check was rejecting trainees who were standing right outside the front door.
+
+The fix was implementing the Haversine formula. It calculates the distance between two GPS coordinates while accounting for the curvature of the Earth, which makes it significantly more accurate than flat distance math.
+```ts
+function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
+  const R = 6371e3
+  const φ1 = (lat1 * Math.PI) / 180
+  const φ2 = (lat2 * Math.PI) / 180
+  const Δφ = ((lat2 - lat1) * Math.PI) / 180
+  const Δλ = ((lon2 - lon1) * Math.PI) / 180
+  const a =
+    Math.sin(Δφ / 2) ** 2 +
+    Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
+```
+
+On top of that, a tolerance buffer absorbs GPS drift without making the geo-fence too lenient.
+
+## Status
+
+Live at CodeTribe Academy, Polokwane.
