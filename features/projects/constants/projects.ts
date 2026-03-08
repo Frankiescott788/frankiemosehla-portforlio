@@ -8,11 +8,12 @@ const projects: Array<
   } & { caseStudySlug?: string }
 > = [
   {
-    title: "E-commerce platform",
-    description: "Full-stack online store with checkout, inventory, and analytics.",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
-    imageSrc: "/images/services/web.svg",
-    imageAlt: "E-commerce platform",
+    title: "KBY Fitness",
+    description: "Women-only fitness mobile app design — onboarding, progress tracking, workouts, goals, and in-app store.",
+    tags: ["UI/UX", "Mobile", "Client work", "Figma"],
+    imageSrc: "/content/kby-home-screen.svg",
+    imageAlt: "KBY Fitness",
+    caseStudySlug: "kby-fitness",
   },
   {
     title: "CodeTribe Timesheet",
@@ -26,7 +27,7 @@ const projects: Array<
     title: "LuminaLab",
     description: "An AI-powered startup idea validation platform featuring dual debate agents.",
     tags: ["AI", "SaaS", "Full-stack", "Next.js", "Supabase"],
-    imageSrc: "/images/case-studies/luminalab.png",
+    imageSrc: "/content/lumina-labs-home.svg",
     imageAlt: "LuminaLab",
     caseStudySlug: "luminalab",
   },
@@ -34,7 +35,7 @@ const projects: Array<
     title: "Zeroes and Ones",
     description: "Retro-inspired agency website for zeroesand1s — AI-powered systems and scalable digital products.",
     tags: ["Client work", "Web", "Next.js", "Tailwind"],
-    imageSrc: "/images/case-studies/zeroes-and-ones.png",
+    imageSrc: "/content/zeroes-and-one.svg",
     imageAlt: "Zeroes and Ones",
     caseStudySlug: "zeroes-and-ones",
   },

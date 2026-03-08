@@ -26,13 +26,13 @@ export function ProjectsSection() {
             const slug = project.caseStudySlug;
             const content = (
               <>
-                <div className="relative flex h-[350px] w-full items-center justify-center overflow-hidden border-b border-[#eaeaeb] bg-[#f9f9f9] dark:border-[#272c37] dark:bg-[#181c24]">
+                <div className="relative flex h-[350px] w-full items-center justify-center overflow-hidden border-b border-[#eaeaeb] bg-[#f9f9f9] px-6 py-8 dark:border-[#272c37] dark:bg-[#181c24]">
                   <Image
                     src={project.imageSrc}
                     alt={project.imageAlt}
                     width={580}
                     height={220}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="flex flex-col gap-3 p-6">
