@@ -2,7 +2,6 @@ import Link from "next/link";
 import type React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-// @ts-expect-error rehype-highlight types not resolved in some setups
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import type { Components } from "react-markdown";
