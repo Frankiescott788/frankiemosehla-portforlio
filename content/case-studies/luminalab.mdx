@@ -10,15 +10,15 @@ githubUrl: ""
 status: "published"
 ---
 
-Most founders validate startup ideas by asking friends or posting in communities. The feedback is biased, shallow, and hard to act on. LuminaLab is an attempt to fix that by turning idea validation into a structured debate between two AI agents — one that wants your idea to succeed and one that wants to kill it.
+Most founders validate startup ideas by asking friends or posting in communities. The feedback is biased, shallow, and hard to act on. LuminaLab is an attempt to fix that by turning idea validation into a structured debate between two AI agents, one that wants your idea to succeed and one that wants to kill it.
 
 ![LuminaLab hero](/content/lumina-labs-home.svg)
 
 ## The idea
 
-You submit a startup idea. Two agents, **Paradox** and **Glitch**, argue it out. Paradox builds the case for why the idea could work — market timing, opportunity, strengths. Glitch tears it apart — risks, competition, blind spots. Neither agent is trying to make you feel good. The goal is a debate honest enough to be useful.
+You submit a startup idea. Two agents, **Paradox** and **Glitch**, argue it out. Paradox builds the case for why the idea could work: market timing, opportunity, strengths. Glitch tears it apart: risks, competition, blind spots. Neither agent is trying to make you feel good. The goal is a debate honest enough to be useful.
 
-When the debate ends, **Lumina** stays available in a side panel. You can ask follow-up questions about anything either agent raised — probe a specific risk, ask for a competitor comparison, or get a plain-language summary of the whole debate.
+When the debate ends, **Lumina** stays available in a side panel. You can ask follow-up questions about anything either agent raised: probe a specific risk, ask for a competitor comparison, or get a plain-language summary of the whole debate.
 
 ## The dashboard
 
@@ -34,7 +34,7 @@ The debate page is split into three sections that work together.
 
 The **summary panel** sits at the top. It shows the idea being debated, a short description, and the current status of the debate so you always have context before reading the arguments.
 
-The **debate feed** is the main content area. Paradox and Glitch stream their arguments in turns, token by token, so the interface feels live. You are not waiting for a response to finish loading — you watch each agent think in real time.
+The **debate feed** is the main content area. Paradox and Glitch stream their arguments in turns, token by token, so the interface feels live. You are not waiting for a response to finish loading; you watch each agent think in real time.
 
 The **Lumina side panel** lives on the right side of the page. Once the debate completes, Lumina is ready for follow-up questions. It has full context of everything both agents said and responds like a chat interface. Ask it anything about the debate.
 
@@ -61,7 +61,7 @@ const channel = supabase
   .subscribe()
 ```
 
-The agents take turns. Getting the sequencing right — making sure Glitch does not start writing before Paradox has finished — required careful orchestration on the backend. The turn state lives in Supabase and the backend checks it before writing each new message.
+The agents take turns. Getting the sequencing right, making sure Glitch does not start writing before Paradox has finished, required careful orchestration on the backend. The turn state lives in Supabase and the backend checks it before writing each new message.
 
 ## Subscription tiers
 
@@ -89,13 +89,13 @@ features/
       route.ts
 ```
 
-This made it straightforward to add subscription checks and usage limits without touching streaming logic. It also made debugging significantly easier — when something breaks, the problem is isolated to one module rather than buried in a 300-line route handler.
+This made it straightforward to add subscription checks and usage limits without touching streaming logic. It also made debugging significantly easier: when something breaks, the problem is isolated to one module rather than buried in a 300-line route handler.
 
 ## CI/CD and project management
 
 Every push to main runs through a GitHub Actions pipeline. Types are checked, lints run, and a passing build is required before anything merges to production. Branch protection enforces this without exception.
 
-The project is tracked in Linear under the KarooTech workspace, with issues, feature labels, and milestone dates. It is the same workflow used for client work — structured, traceable, and easy to pick up after time away.
+The project is tracked in Linear under the KarooTech workspace, with issues, feature labels, and milestone dates. It is the same workflow used for client work: structured, traceable, and easy to pick up after time away.
 
 ![Linear project board for LuminaLab](/images/case-studies/luminalab-linear.png)
 

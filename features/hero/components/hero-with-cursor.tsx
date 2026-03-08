@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 
 export function HeroWithCursor() {
@@ -52,7 +51,7 @@ export function HeroWithCursor() {
           Imagine it on Monday. Ship it by Friday. Clean code, beautiful UI,
           built to last.
         </p>
-        <Link
+        <a
           href="#book"
           className="mx-auto mt-8 inline-flex h-12 shrink-0 items-center justify-center gap-4 rounded-xl border-0 bg-[#090a0d] py-2 pl-[18px] pr-[14px] font-sans text-[16px] text-white shadow-[0_6px_8px_-6px_rgba(16,24,40,0.16)] hover:bg-[#272c37] dark:hover:bg-[#181c24] [&_svg]:size-5 font-medium cursor-pointer"
         >
@@ -66,7 +65,7 @@ export function HeroWithCursor() {
               sizes="24px"
             />
           </span>
-        </Link>
+        </a>
         
       </section>
     </section>

@@ -1,12 +1,6 @@
-import {
-  Timeline,
-  TimelineItem,
-  TimelineDot,
-  TimelineContent,
-  TimelineLine,
-} from "@/shared/components/ui/timeline";
 import { SectionChip } from "@/shared/components/section-chip";
 import { experiences } from "@/features/experience/constants/experiences";
+import { Check } from "lucide-react";
 
 export function ExperienceSection() {
   return (
@@ -24,67 +18,56 @@ export function ExperienceSection() {
         </p>
 
         <div className="mx-auto mt-12 max-w-3xl">
-          <Timeline
-            positions="left"
-            className="font-sans [&_li]:grid-rows-[auto_1fr] [&_li]:gap-y-0 [&_li]:gap-x-4"
-          >
+          <ul className="flex flex-col">
             {experiences.map((exp, i) => (
-              <TimelineItem
-                key={exp.role + exp.date}
-                status="done"
-                className="text-[#090a0d] dark:text-white"
-              >
-                <div className="col-start-3 col-end-4 row-start-1 row-end-1 mr-auto flex w-full max-w-full items-baseline justify-between gap-4 text-left">
-                  <p className="min-w-0 text-lg font-bold text-[#090a0d] dark:text-white">
-                    {exp.role}
-                    {"company" in exp && exp.company != null && (
-                      <span className="font-normal text-[#545961] dark:text-[#a6a9ae]">
-                        {" "}
-                        ({exp.company})
-                      </span>
-                    )}
-                  </p>
-                  <div className="shrink-0 text-right font-sans text-sm">
-                    <p className="font-medium text-[#090a0d] dark:text-white">
-                      {exp.date}
-                    </p>
-                    <p className="font-normal text-[#545961] dark:text-[#a6a9ae]">
-                      {exp.location}
-                    </p>
+              <li key={exp.role + exp.date} className="relative flex gap-x-4">
+                {/* Left column: dot + line */}
+                <div className="flex flex-col items-center lg:mt-1">
+                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#090a0d] dark:bg-[#272c37]">
+                    <Check className="size-3 text-white" />
                   </div>
+                  {i < experiences.length - 1 && (
+                    <div className="mt-1 w-0.5 grow bg-[#d6d8da] dark:bg-[#272c37]" />
+                  )}
                 </div>
-                <TimelineDot
-                  status="done"
-                  className="!border-[#d6d8da] !bg-[#090a0d] dark:!border-[#272c37] dark:!bg-[#272c37] [&_.lucide-check]:!text-white"
-                />
-                <TimelineContent
-                  side="right"
-                  className="!pb-10 !text-[#545961] dark:!text-[#a6a9ae]"
-                >
+
+                {/* Right column: content */}
+                <div className="pb-10 w-full min-w-0">
+                  <div className="flex w-full items-baseline justify-between gap-4">
+                    <p className="text-lg font-bold text-[#090a0d] dark:text-white">
+                      {exp.role}
+                      {"company" in exp && exp.company != null && (
+                        <span className="font-normal text-[#545961] dark:text-[#a6a9ae]">
+                          {" "}({exp.company})
+                        </span>
+                      )}
+                    </p>
+                    <div className="shrink-0 text-right text-sm">
+                      <p className="font-medium text-[#090a0d] dark:text-white">
+                        {exp.date}
+                      </p>
+                      <p className="font-normal text-[#545961] dark:text-[#a6a9ae]">
+                        {exp.location}
+                      </p>
+                    </div>
+                  </div>
+
                   {exp.description != null && (
-                    <p className="font-sans text-sm leading-5">
+                    <p className="mt-1 text-sm leading-5 text-[#545961] dark:text-[#a6a9ae]">
                       {exp.description}
                     </p>
                   )}
                   {exp.bullets != null && exp.bullets.length > 0 && (
-                    <ul className="mt-2 list-disc pl-4 font-sans text-sm leading-5">
+                    <ul className="mt-2 list-disc pl-4 text-sm leading-5 text-[#545961] dark:text-[#a6a9ae]">
                       {exp.bullets.map((bullet, j) => (
-                        <li key={j} className="mt-1">
-                          {bullet}
-                        </li>
+                        <li key={j} className="mt-1">{bullet}</li>
                       ))}
                     </ul>
                   )}
-                </TimelineContent>
-                {i < experiences.length - 1 && (
-                  <TimelineLine
-                    done
-                    className="!bg-[#d6d8da] dark:!bg-[#272c37]"
-                  />
-                )}
-              </TimelineItem>
+                </div>
+              </li>
             ))}
-          </Timeline>
+          </ul>
         </div>
 
         <div className="mt-12 flex justify-center">

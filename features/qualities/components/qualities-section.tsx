@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SectionChip } from "@/shared/components/section-chip";
 import { qualities } from "@/features/qualities/constants/qualities";
+import { site } from "@/lib/site";
 
 export function QualitiesSection() {
   return (
@@ -38,16 +39,18 @@ export function QualitiesSection() {
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="#pricing"
+            href="#book"
             className="flex h-10 min-w-[120px] items-center justify-center gap-2 rounded-[12px] border-x border-dashed border-[#d6d8da] bg-[#090a0d] px-5 py-1 font-sans text-xs text-white shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1)] dark:border-[#272c37]"
           >
-            See plans
+            Book a call
           </Link>
           <Link
-            href="#book"
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex h-10 min-w-[120px] items-center justify-center gap-2 rounded-[12px] border border-dashed border-[#d6d8da] bg-white px-5 py-1 font-sans text-xs text-[#090a0d] shadow-[0_4px_8px_-2px_rgba(16,24,40,0.1)] dark:border-[#272c37] dark:bg-[#181c24] dark:text-white"
           >
-            Book a call
+            GitHub
           </Link>
         </div>
       </section>
