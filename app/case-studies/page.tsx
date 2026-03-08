@@ -1,8 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Navbar } from "@/shared/components/navbar";
 import { getPublishedCaseStudies } from "@/lib/case-studies";
 import { SectionChip } from "@/shared/components/section-chip";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Case studies",
+  description:
+    "In-depth write-ups of selected projects by Frank Mosehla. Web and mobile apps, AI systems, and product engineering.",
+  openGraph: {
+    title: "Case studies | Frank Mosehla",
+    description:
+      "In-depth write-ups of selected projects by Frank Mosehla. Web and mobile apps, AI systems, and product engineering.",
+    url: `${site.url}/case-studies`,
+  },
+  alternates: {
+    canonical: `${site.url}/case-studies`,
+  },
+};
 
 export default function CaseStudiesIndexPage() {
   const caseStudies = getPublishedCaseStudies();
